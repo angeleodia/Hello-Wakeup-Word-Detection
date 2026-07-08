@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HMM-GMM Wake Word System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>HMM-GMM Wake Word Detection System</h1>
+
+<p class="subtitle">
+MFCC Feature Extraction + HMM-GMM Classification
+</p>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h2>Microphone Status</h2>
+
+<div id="status" class="status idle">
+● Microphone Idle
+</div>
+
+
+<canvas id="waveform"></canvas>
+
+
+<button id="start">
+Start Listening
+</button>
+
+<button id="stop">
+Stop
+</button>
+
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Detection Result</h2>
+
+
+<div id="result">
+Waiting...
+</div>
+
+
+<div class="score">
+
+<p>
+Wake Score :
+<span id="wakeScore">-</span>
+</p>
+
+
+<p>
+Non Wake Score :
+<span id="nonwakeScore">-</span>
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Statistics</h2>
+
+
+<p>
+Total Detection :
+<span id="total">0</span>
+</p>
+
+
+<p>
+Wake Word :
+<span id="wakeCount">0</span>
+</p>
+
+
+<p>
+Non Wake Word :
+<span id="nonwakeCount">0</span>
+</p>
+
+
+<button id="export">
+Export CSV
+</button>
+
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Detection History</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Time</th>
+<th>Result</th>
+</tr>
+
+</thead>
+
+
+<tbody id="history">
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+<h2>Model Information</h2>
+
+
+<p>
+Algorithm :
+<b>HMM-GMM</b>
+</p>
+
+
+<p>
+Feature :
+<b>MFCC</b>
+</p>
+
+
+<p>
+Classifier :
+<b>Gaussian Mixture Model</b>
+</p>
+
+
+<p>
+Input :
+<b>Microphone Audio</b>
+</p>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Audio Analysis</h2>
+
+<h3>Waveform</h3>
+<canvas id="waveCanvas"></canvas>
+
+
+<h3>Spectrogram</h3>
+<canvas id="spectrogramCanvas"></canvas>
+
+
+<h3>MFCC Feature</h3>
+<canvas id="mfccCanvas"></canvas>
+
+
+<h3>Phoneme Detection</h3>
+
+<div id="phoneme">
+Waiting...
+</div>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
